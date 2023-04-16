@@ -18,7 +18,7 @@ const openPopup = (event) => {
   const petParasites = document.querySelector('#pet_parasites'); 
   imgPet.src = pet.img;
   petName.textContent = pet.name;
-  petBreed.textContent = pet.breed;
+  petBreed.textContent = pet.type + " - " + pet.breed;
   petDescription.textContent = pet.description;
   petAge.textContent = pet.age;
   petInoculations.textContent = pet.inoculations;

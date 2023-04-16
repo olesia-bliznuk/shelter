@@ -379,7 +379,7 @@ p {
 
 .transition-right {
     animation-name: move-right;
-    animation-duration: 5s;
+    animation-duration: 0.5s;
 }
 
 @keyframes move-left {
@@ -394,7 +394,7 @@ p {
 
 .transition-left {
     animation-name: move-left;
-    animation-duration: 5s;
+    animation-duration: 0.5s;
 }
 
 .hidden {
@@ -839,7 +839,7 @@ p {
         }
 
         to {
-            left: 10px;
+            left: 7px;
         }
     }
 
