@@ -46,9 +46,8 @@ document.querySelector('.header_nav').addEventListener('click', function (event)
     }
 });
 
-window.addEventListener('resize', function() {
-    if (document.documentElement.clientWidth > 767)
-    {
+window.addEventListener('resize', function () {
+    if (document.documentElement.clientWidth > 767) {
         document.querySelector(".header").classList.remove("open");
         document.body.classList.remove('stop-scrolling');
         document.querySelector(".blur").classList.remove("background_blur");

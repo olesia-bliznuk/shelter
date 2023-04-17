@@ -266,12 +266,12 @@ p {
 }
 
 
-.btn_arrow:focus{
+.btn_arrow:focus {
     border: 2px solid #F1CDB3;
     text-decoration: none;
 }
 
-.btn_arrow:visited{
+.btn_arrow:visited {
     border: 2px solid #F1CDB3;
     text-decoration: none;
 }
@@ -648,10 +648,11 @@ p {
     background: #FAFAFA;
     border-radius: 9px;
     text-align: left;
-    overflow: scroll;
+    overflow-y: scroll;
+
 }
 
-.modal_card:not(:hover) ~ .button_close{
+.modal_card:not(:hover)~.button_close {
     background-color: #F1CDB3;
 }
 
@@ -958,6 +959,7 @@ p {
     .modal_card {
         width: 630px;
         height: 350px;
+        overflow-y: scroll;
     }
 
     .img_pet {
@@ -966,6 +968,7 @@ p {
     }
 
     .content {
+        width: 260px;
         padding-left: 10px;
         padding-right: 9px;
     }
@@ -986,15 +989,23 @@ p {
     }
 
     .pet_list {
+        width: 260px;
         padding-top: 8px;
+        display: inline;
     }
 
     .pet_list h5 {
         padding: 0px 5px 6px 0px;
+        display: inline;
     }
 
     .pet_list p {
         padding: 0px 0px 6px 0;
+        display: inline;
+    }
+
+    #pet_inoculations {
+        width: 126px;
     }
 }
 
@@ -1436,18 +1447,21 @@ p {
     }
 
     .pet_name {
+        width: 220px;
         margin-top: 10px;
         margin-bottom: 9px;
         text-align: center;
     }
 
     .pet_breed {
+        width: 220px;
         margin-top: 9px;
         margin-bottom: 20px;
         text-align: center;
     }
 
     .pet_description {
+        width: 220px;
         font-size: 13px;
         line-height: 110%;
     }
@@ -1456,11 +1470,18 @@ p {
         padding-top: 10px;
     }
 
+    .pet_list div {
+        display: inline-block;
+    }
+
     .pet_list h5 {
         padding: 0px 5px 6px 0px;
+        display: inline;
     }
 
     .pet_list p {
         padding: 0px 0px 6px 0;
+        display: inline-block;
     }
+
 }
