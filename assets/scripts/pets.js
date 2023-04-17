@@ -94,5 +94,5 @@ export const pets = [
       inoculations: ['bordetella bronchiseptica', 'leptospirosis'],
       diseases: ['deafness', 'blindness'],
       parasites: ['lice', 'fleas'],
-    },
+    }
   ];

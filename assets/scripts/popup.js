@@ -3,9 +3,12 @@ import { pets } from "./pets.js";
 let popup = document.querySelector('.popup');
 
 const openPopup = (event) => {
-    let petNum = event.target.parentElement.id;
+  let petNum = event.target.parentElement.id;
+  if (petNum == 'item-active')
+  {
+    petNum = event.target.id;
+  } 
   let pet = pets[petNum];
-
   popup.classList.add('open');
   document.body.classList.add('no-scroll');
   const imgPet = document.querySelector('.img_pet');
@@ -53,6 +56,8 @@ document.querySelector("#popup .modal_card").addEventListener('click', event => 
 // вызов попапа
 window.addEventListener('click', function(event) {
     if (event.target.classList.contains('open_popup')) {
-        openPopup(event);
+      setTimeout(function () {
+        openPopup(event)
+      }, 300) ;
     }
   });

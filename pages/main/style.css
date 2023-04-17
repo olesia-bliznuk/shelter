@@ -259,13 +259,21 @@ p {
 
 .btn_arrow:hover {
     background: #e4c5af;
+    border: 2px solid #F1CDB3;
     cursor: pointer;
     transition: all 0.5s ease-out;
+    text-decoration: none;
 }
 
-.btn_arrow:active {
-    background: #F1CDB3;
-    transition: all 0.2s ease-out;
+
+.btn_arrow:focus{
+    border: 2px solid #F1CDB3;
+    text-decoration: none;
+}
+
+.btn_arrow:visited{
+    border: 2px solid #F1CDB3;
+    text-decoration: none;
 }
 
 .card {
