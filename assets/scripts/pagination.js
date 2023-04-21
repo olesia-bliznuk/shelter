@@ -154,14 +154,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
 window.addEventListener(`resize`, event => {
-    let count = countPets;
-    
-
-    /*totalPage = Math.ceil(48 / onePage)
-
-    currentPage = currentPage > totalPage ? totalPage : currentPage
-    createPagination(currentPage, totalPage)*/
-
+    let count = countPets();
+    console.log(count);
+    cleanPage();
+    let startNum;
+    if (+numPage.textContent > 48/count){
+        numPage.textContent = `${48/count}`;
+        startNum = 48 - count;
+    }else{
+        startNum = count * (+numPage.textContent-1);
+    }
+    createListCards( startNum, numPets, count, cardsContainer);
+    startNum = +numPage.textContent*count;
+    buttonCheck();
 }, false);
 
 

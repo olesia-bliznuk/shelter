@@ -4,7 +4,7 @@ let popup = document.querySelector('.popup');
 
 const openPopup = (event) => {
   let petNum = event.target.parentElement.id;
-  if (petNum == 'item-active') {
+  if (petNum == 'item-active' || petNum == '') {
     petNum = event.target.id;
   }
   let pet = pets[petNum];
