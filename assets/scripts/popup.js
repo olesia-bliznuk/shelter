@@ -24,8 +24,7 @@ const openPopup = (event) => {
   petDescription.textContent = pet.description;
   petAge.textContent = pet.age;
   petInoculations.textContent = pet.inoculations[0];
-  for (let i = 1; i < pet.inoculations.length; i++)
-  {
+  for (let i = 1; i < pet.inoculations.length; i++) {
     petInoculations.textContent = petInoculations.textContent + ', ' + pet.inoculations[i];
   }
   petDiseases.textContent = pet.diseases;

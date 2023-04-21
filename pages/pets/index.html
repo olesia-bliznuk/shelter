@@ -10,8 +10,33 @@
 </head>
 
 <body>
+    <div class="blur"></div>
     <header class="header container">
-        <a class="logo" href="../../main/index.html">
+        <!-- <header class="header container"> -->
+        <a class="logo" href="../../pages/main/index.html">
+            <h1>Cozy House</h1>
+            <h2>Shelter for pets in Boston</h2>
+        </a>
+        <a class="logo burger_logo" href="../../pages/main/index.html">
+            <h1>Cozy House</h1>
+            <h2>Shelter for pets in Boston</h2>
+        </a>
+        <button class="burger" id="burger">
+            <img src="../../assets/img/burger.svg" alt="burger menu">
+        </button>
+        <nav class="header_nav" id="header_nav">
+            <a class="header_link" href="../../pages/main/index.html">About the shelter</a>
+            <a class="active_link" class="header_link" href="../../pages/pets/index.html">Our pets</a>
+            <a class="header_link" href="../../pages/main/index.html#help">Help the shelter</a>
+            <a class="header_link" href="#contacts">Contacts</a>
+        </nav>
+    </header>
+
+    <!-- <a class="logo" href="../../pages/main/index.html">
+            <h1>Cozy House</h1>
+            <h2>Shelter for pets in Boston</h2>
+        </a>
+        <a class="logo burger_logo" href="#main_screen">
             <h1>Cozy House</h1>
             <h2>Shelter for pets in Boston</h2>
         </a>
@@ -23,8 +48,8 @@
             <a class="active_link" href="../../pages/pets/index.html">Our pets</a>
             <a href="../../pages/main/index.html#help">Help the shelter</a>
             <a href="#contacts">Contacts</a>
-        </nav>
-    </header>
+        </nav> -->
+    <!-- </header> -->
     <section class="pets">
         <div class="container">
             <h3>Our friends who <br>
@@ -35,13 +60,13 @@
                     <h4>Katrine</h4>
                     <button>Learn more</button>
                 </div> -->
-            </div> 
+            </div>
             <div class="navigation">
-                <button class="button_paginator" id = "btn_first_page" disabled>&lt;&lt;</button>
-                <button class="button_paginator" id = "btn_prev_page"  disabled>&lt;</button>
-                <button class="number_page" id = "num_page">1</button>
-                <button class="button_paginator" id = "btn_next_page" >&gt;</button>
-                <button class="button_paginator" id = "btn_last_page" >&gt;&gt;</button>
+                <button class="button_paginator" id="btn_first_page" disabled>&lt;&lt;</button>
+                <button class="button_paginator" id="btn_prev_page" disabled>&lt;</button>
+                <button class="number_page" id="num_page">1</button>
+                <button class="button_paginator" id="btn_next_page">&gt;</button>
+                <button class="button_paginator" id="btn_last_page">&gt;&gt;</button>
             </div>
         </div>
     </section>
@@ -109,7 +134,7 @@
                     alt="close"></button>
         </div>
     </div>
-    <!-- <script src="../../assets/scripts/burger.js"></script> -->
+    <script src="../../assets/scripts/burger.js"></script>
     <script type="module" src="../../assets/scripts/pagination.js"></script>
     <script type="module" src="../../assets/scripts/popup.js"></script>
 </body>
