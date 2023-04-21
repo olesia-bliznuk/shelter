@@ -273,6 +273,155 @@ h4{
     text-decoration: none;
 }
 
+/*POPUP*/
+
+.popup {
+    visibility: hidden;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 41, 41, 0.6);
+    z-index: 20;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: opacity 0.4s, visibility 0.4s;
+}
+
+
+.popup.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal_window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 952px;
+    height: 552px;
+    margin: -276px 0 0 -450px;
+    text-align: right;
+    transform: scale(0);
+    transition: transform 0.8s;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.popup.open .modal_window {
+    transform: scale(1);
+}
+
+.button_close {
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    width: 52px;
+    height: 52px;
+    background-color: rgba(28, 28, 28, 0);
+    margin-right: 10px;
+    align-self: flex-end;
+}
+
+.button_close:hover {
+    background-color: #F1CDB3;
+    cursor: pointer;
+}
+
+.modal_card {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    background: #FAFAFA;
+    border-radius: 9px;
+    text-align: left;
+    overflow-y: scroll;
+
+}
+
+.modal_card:not(:hover)~.button_close {
+    background-color: #F1CDB3;
+}
+
+.img_pet {
+    width: 500px;
+    height: 500px;
+    border-radius: 9px;
+}
+
+.content {
+    font-family: 'Georgia';
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+.pet_name {
+    font-size: 35px;
+    line-height: 130%;
+    font-weight: 400;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    letter-spacing: 0.06em;
+}
+
+.pet_breed {
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    line-height: 115%;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.pet_description {
+    font-size: 15px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+}
+
+.pet_list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+}
+
+.pet_list div {
+    display: flex;
+}
+
+.pet_list img {
+    height: 4px;
+    width: 4px;
+    padding-right: 10px;
+    padding-top: 5px;
+
+}
+
+.pet_list h5 {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    padding: 0px 5px 11px 0px;
+    margin: 0;
+}
+
+.pet_list p {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    padding: 0px 0px 11px 0;
+    margin: 0;
+}
+
 /*768px*/
 
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -343,6 +492,66 @@ h4{
         margin-top: 30px;
         margin-bottom: 18px;
         width: 279px;
+    }
+
+    /*POPUP*/
+
+    .modal_window {
+        width: 682px;
+        height: 402px;
+        margin: -201px 0 0 -315px;
+    }
+
+    .modal_card {
+        width: 630px;
+        height: 350px;
+        overflow-y: scroll;
+    }
+
+    .img_pet {
+        width: 350px;
+        height: 350px;
+    }
+
+    .content {
+        width: 260px;
+        padding-left: 10px;
+        padding-right: 9px;
+    }
+
+    .pet_name {
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+
+    .pet_breed {
+        margin-top: 8px;
+        margin-bottom: 22px;
+    }
+
+    .pet_description {
+        font-size: 13px;
+        line-height: 107%;
+    }
+
+    .pet_list {
+        width: 260px;
+        padding-top: 8px;
+        display: inline;
+    }
+
+    .pet_list h5 {
+        padding: 0px 5px 6px 0px;
+        display: inline;
+    }
+
+    .pet_list p {
+        padding: 0px 0px 6px 0;
+        display: inline;
+    }
+
+    #pet_inoculations {
+        width: 126px;
     }
 }
 
@@ -586,4 +795,70 @@ h4{
         padding-left: 20px;
 
     }*/
+
+
+    /*POPUP*/
+
+    .modal_window {
+        width: 270px;
+        height: 393px;
+        margin: -196px 0 0 -120px;
+    }
+
+    .modal_card {
+        width: 240px;
+        height: 341px;
+    }
+
+    .button_close {
+        margin-right: 0px;
+    }
+
+    .img_pet {
+        display: none;
+    }
+
+    .content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pet_name {
+        width: 220px;
+        margin-top: 10px;
+        margin-bottom: 9px;
+        text-align: center;
+    }
+
+    .pet_breed {
+        width: 220px;
+        margin-top: 9px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .pet_description {
+        width: 220px;
+        font-size: 13px;
+        line-height: 110%;
+    }
+
+    .pet_list {
+        padding-top: 10px;
+    }
+
+    .pet_list div {
+        display: inline-block;
+    }
+
+    .pet_list h5 {
+        padding: 0px 5px 6px 0px;
+        display: inline;
+    }
+
+    .pet_list p {
+        padding: 0px 0px 6px 0;
+        display: inline-block;
+    }
+
 }
