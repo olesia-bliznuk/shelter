@@ -1,5 +1,3 @@
-const logo_clone = document.querySelector('.logo').cloneNode(true);
-
 // Действие при клике на бургер
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("burger").addEventListener("click", function () {

@@ -29,13 +29,13 @@ const openPopup = (event) => {
   }
   petDiseases.textContent = pet.diseases;
   petParasites.textContent = pet.parasites;
-}
+};
 
 // Закрыть модальное окно
 document.querySelector(".button_close").addEventListener("click", function () {
   popup.classList.remove("open");
   document.body.classList.remove('no-scroll');
-})
+});
 
 // Закрыть модальное окно при нажатии на Esc
 window.addEventListener('keydown', (e) => {

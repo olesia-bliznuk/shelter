@@ -1028,6 +1028,7 @@ p {
         padding-left: 10px;
         padding-right: 10px;
         width: 100%;
+        margin: 0;
     }
 
     .header_nav {

@@ -3,7 +3,6 @@ import { pets } from "./pets.js";
 let numPets = [];
 const cardsContainer = document.querySelector('.cards_container');
 const numPage = document.querySelector('#num_page');
-
 const btnFirstPage = document.querySelector('#btn_first_page');
 const btnLastPage = document.querySelector('#btn_last_page');
 const btnNextPage = document.querySelector('#btn_next_page');
@@ -14,8 +13,9 @@ const cleanPage = () => {
     for (let card of cardsArr) {
         cardsContainer.removeChild(card);
     }
-}
+};
 
+//Проверка кнопок
 const buttonCheck = () => {
     let count = countPets();
     if (+numPage.textContent == 48 / count) {
@@ -23,65 +23,63 @@ const buttonCheck = () => {
         btnLastPage.disabled = true;
         btnNextPage.disabled = true;
         btnPrevPage.disabled = false;
-    } else if(+numPage.textContent == 1){
+    } else if (+numPage.textContent == 1) {
         btnFirstPage.disabled = true;
         btnLastPage.disabled = false;
         btnNextPage.disabled = false;
         btnPrevPage.disabled = true;
-    }else {
+    } else {
         btnFirstPage.disabled = false;
         btnLastPage.disabled = false;
         btnNextPage.disabled = false;
         btnPrevPage.disabled = false;
     }
-}
+};
 
-const get_first_page = () => {
+//Первая страница
+const getFirstPage = () => {
     let count = countPets();
     cleanPage();
     createListCards(0, numPets, count, cardsContainer);
     numPage.textContent = '1';
     buttonCheck();
-}
+};
 
-const get_last_page = () => {
+//Последняя страница
+const getLastPage = () => {
     let count = countPets();
     cleanPage();
     createListCards(48 - count, numPets, count, cardsContainer);
     numPage.textContent = `${48 / count}`;
     buttonCheck();
-}
+};
 
-const get_next_page = () => {
+//Следующая страница
+const getNextPage = () => {
     let count = countPets();
     cleanPage();
-    let startNum = +numPage.textContent*count;
+    let startNum = +numPage.textContent * count;
     createListCards(startNum, numPets, count, cardsContainer);
-    numPage.textContent = `${+numPage.textContent+1}`;
+    numPage.textContent = `${+numPage.textContent + 1}`;
     buttonCheck();
-}
+};
 
-const get_prev_page = () => {
+//Предыдущая страница
+const getPrevPage = () => {
     let count = countPets();
     cleanPage();
-    let startNum = +numPage.textContent*count - count*2;
+    let startNum = +numPage.textContent * count - count * 2;
     createListCards(startNum, numPets, count, cardsContainer);
-    numPage.textContent = `${+numPage.textContent-1}`;
+    numPage.textContent = `${+numPage.textContent - 1}`;
     buttonCheck();
-}
+};
 
+btnFirstPage.addEventListener("click", getFirstPage);
+btnLastPage.addEventListener("click", getLastPage);
+btnNextPage.addEventListener("click", getNextPage);
+btnPrevPage.addEventListener("click", getPrevPage);
 
-btnFirstPage.addEventListener("click", get_first_page);
-btnLastPage.addEventListener("click", get_last_page);
-btnNextPage.addEventListener("click", get_next_page);
-btnPrevPage.addEventListener("click", get_prev_page);
-
-
-////
-
-
-
-/*Генерация массива*/
+//Получение массива
 const getRandomNums = () => {
     let numArr = [];
     let numArrMin = [];
@@ -95,9 +93,6 @@ const getRandomNums = () => {
             numArrMiddle.push(num);
             numArrMax.push(num);
         }
-        /* Проверка на каждый 8 элемент*/
-        /* Проверка на каждый 6 элемент*/
-        /* Проверка на каждый 3 элемент*/
         if (numArrMax.find(currentValue => currentValue == num) == undefined &&
             numArrMin.find(currentValue => currentValue == num) == undefined &&
             numArrMiddle.find(currentValue => currentValue == num) == undefined) {
@@ -112,6 +107,7 @@ const getRandomNums = () => {
     }
     return numArr;
 };
+
 
 const createListCards = (j, numPets, count, item) => {
     for (let i = j; i < count + j; i++) {
@@ -129,13 +125,13 @@ const createCardTemplate = (num) => {
     card.innerHTML = `<img class="open_popup" src="${pets[numPet].img}" alt="${pets[numPet].name}">
                       <h4 class="open_popup">${pets[numPet].name}</h4>
                       <button class="open_popup">Learn more</button>`;
-    card.setAttribute("id", num)
+    card.setAttribute("id", num);
     return card;
 };
 
 /*Получение размера*/
 const countPets = () => {
-    let screenWidth = window.innerWidth
+    let screenWidth = window.innerWidth;
     if (screenWidth >= 1280) {
         return 8;
     } else if (screenWidth >= 768) {
@@ -145,27 +141,26 @@ const countPets = () => {
     }
 };
 
-
 document.addEventListener("DOMContentLoaded", (event) => {
     numPets = getRandomNums();
     let count = countPets();
     createListCards(0, numPets, count, cardsContainer);
 });
 
-
+//Измение количества карточек при измении размера экрана
 window.addEventListener(`resize`, event => {
     let count = countPets();
     console.log(count);
     cleanPage();
     let startNum;
-    if (+numPage.textContent > 48/count){
-        numPage.textContent = `${48/count}`;
+    if (+numPage.textContent > 48 / count) {
+        numPage.textContent = `${48 / count}`;
         startNum = 48 - count;
-    }else{
-        startNum = count * (+numPage.textContent-1);
+    } else {
+        startNum = count * (+numPage.textContent - 1);
     }
-    createListCards( startNum, numPets, count, cardsContainer);
-    startNum = +numPage.textContent*count;
+    createListCards(startNum, numPets, count, cardsContainer);
+    startNum = +numPage.textContent * count;
     buttonCheck();
 }, false);
 
