@@ -150,7 +150,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 //Измение количества карточек при измении размера экрана
 window.addEventListener(`resize`, event => {
     let count = countPets();
-    console.log(count);
     cleanPage();
     let startNum;
     if (+numPage.textContent > 48 / count) {
