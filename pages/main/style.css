@@ -114,6 +114,10 @@ p {
     color: #CDCDCD;
 }
 
+.header_nav a:hover {
+    color: #cdcdcd7c;
+}
+
 .header_nav a:not(:first-child) {
     padding-left: 32px;
 }
